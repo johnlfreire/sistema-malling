@@ -1,0 +1,4 @@
+2018-12-15 13:39:06,804 [Thread-5]  WARN sistemamalling.util.GerarBancodeDados:188 - Falha ao Carregar dados do CNJorg.jdom2.input.JDOMParseException: Error on line 14117: A referência à entidade "fid" deve terminar com o delimitador ';'.
+2019-01-08 22:22:06,953 [JavaFX Application Thread]  INFO sistemamalling.controller.FXMLCadastroController:293 - O Cartório Oficial de Registro Civil das Pessoas Naturais e de InterdiÃÂ§ÃÂµes e Tutelas da Sede da Comarca de GuarujÃÂ¡-SP foi Atualizado com sucesso!
+2019-01-09 21:54:16,456 [JavaFX Application Thread]  INFO sistemamalling.controller.FXMLCadastroController:293 - O Cartório OFICIAL DE REGISTRO CIVIL DAS PESSOAS NATURAIS E TABELIÃÂO DE NOTAS foi Atualizado com sucesso!
+2019-01-09 21:54:24,277 [JavaFX Application Thread]  INFO sistemamalling.controller.FXMLCadastroController:293 - O Cartório Cartorio do Registro Civil e Anexos de Ipeuna foi Atualizado com sucesso!

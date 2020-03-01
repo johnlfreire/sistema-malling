@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+    <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+    <property name="hibernate.connection.url">jdbc:sqlite:financas.db</property>
+    <property name="hibernate.connection.username"></property>
+    <property name="hibernate.connection.password"></property>
+    <property name="hibernate.show_sql">true</property>
+   
+     
+    <!-- Configuração de validação do Banco de Dados na execução do sistema -->
+    <!-- É aqui que se informa se o banco será criado pelo Hibernate (create-drop) -->
+
+    <property name="javax.persistence.validation.mode">none</property>
+ <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping class="sistemamalling.modelo.ModeloCartorio"/>
+    <mapping class="sistemamalling.modelo.ModeloEstado"/>
+    <mapping class="sistemamalling.modelo.ModeloCidade"/>
+    <mapping class="sistemamalling.modelo.ModeloSistema"/>
+  </session-factory>
+</hibernate-configuration>

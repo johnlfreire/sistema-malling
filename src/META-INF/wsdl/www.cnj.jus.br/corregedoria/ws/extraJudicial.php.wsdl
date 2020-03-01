@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php">
+<types>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="servicoRequestType">
+  <xsd:all>
+   <xsd:element name="dt_inicio" type="xsd:string" form="unqualified"/>
+   <xsd:element name="dt_final" type="xsd:string" form="unqualified"/>
+   <xsd:element name="ind_uf" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="servicoResponseType">
+  <xsd:all>
+   <xsd:element name="serventias" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="servico_atualizacao_inclusaoRequestType">
+  <xsd:all>
+   <xsd:element name="dia" type="xsd:string" form="unqualified"/>
+   <xsd:element name="mes" type="xsd:string" form="unqualified"/>
+   <xsd:element name="ano" type="xsd:string" form="unqualified"/>
+   <xsd:element name="ind_uf" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="servico_atualizacao_inclusaoResponseType">
+  <xsd:all>
+   <xsd:element name="serventias" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="servico_atualizacao_alteracaoRequestType">
+  <xsd:all>
+   <xsd:element name="dia" type="xsd:string" form="unqualified"/>
+   <xsd:element name="mes" type="xsd:string" form="unqualified"/>
+   <xsd:element name="ano" type="xsd:string" form="unqualified"/>
+   <xsd:element name="ind_uf" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="servico_atualizacao_alteracaoResponseType">
+  <xsd:all>
+   <xsd:element name="serventias" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:element name="servico" type="tns:servicoRequestType"/>
+ <xsd:element name="servicoResponse" type="tns:servicoResponseType"/>
+ <xsd:element name="servico_atualizacao_inclusao" type="tns:servico_atualizacao_inclusaoRequestType"/>
+ <xsd:element name="servico_atualizacao_inclusaoResponse" type="tns:servico_atualizacao_inclusaoResponseType"/>
+ <xsd:element name="servico_atualizacao_alteracao" type="tns:servico_atualizacao_alteracaoRequestType"/>
+ <xsd:element name="servico_atualizacao_alteracaoResponse" type="tns:servico_atualizacao_alteracaoResponseType"/>
+</xsd:schema>
+</types>
+<message name="servicoRequest">
+  <part name="parameters" element="tns:servico" /></message>
+<message name="servicoResponse">
+  <part name="parameters" element="tns:servicoResponse" /></message>
+<message name="servico_atualizacao_inclusaoRequest">
+  <part name="parameters" element="tns:servico_atualizacao_inclusao" /></message>
+<message name="servico_atualizacao_inclusaoResponse">
+  <part name="parameters" element="tns:servico_atualizacao_inclusaoResponse" /></message>
+<message name="servico_atualizacao_alteracaoRequest">
+  <part name="parameters" element="tns:servico_atualizacao_alteracao" /></message>
+<message name="servico_atualizacao_alteracaoResponse">
+  <part name="parameters" element="tns:servico_atualizacao_alteracaoResponse" /></message>
+<portType name="servicoPortType">
+  <operation name="servico">
+    <documentation>Busca as serventias que estao ativas no periodo selecionado</documentation>
+    <input message="tns:servicoRequest"/>
+    <output message="tns:servicoResponse"/>
+  </operation>
+  <operation name="servico_atualizacao_inclusao">
+    <documentation>Busca as serventias que foram incluidas no periodo do mes e ano informados</documentation>
+    <input message="tns:servico_atualizacao_inclusaoRequest"/>
+    <output message="tns:servico_atualizacao_inclusaoResponse"/>
+  </operation>
+  <operation name="servico_atualizacao_alteracao">
+    <documentation>Busca as serventias que foram atualizadas no periodo do mes e ano informados</documentation>
+    <input message="tns:servico_atualizacao_alteracaoRequest"/>
+    <output message="tns:servico_atualizacao_alteracaoResponse"/>
+  </operation>
+</portType>
+<binding name="servicoBinding" type="tns:servicoPortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="servico">
+    <soap:operation soapAction="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php/servico" style="document"/>
+    <input><soap:body use="literal" namespace=""/></input>
+    <output><soap:body use="literal" namespace=""/></output>
+  </operation>
+  <operation name="servico_atualizacao_inclusao">
+    <soap:operation soapAction="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php/servico_atualizacao_inclusao" style="document"/>
+    <input><soap:body use="literal" namespace=""/></input>
+    <output><soap:body use="literal" namespace=""/></output>
+  </operation>
+  <operation name="servico_atualizacao_alteracao">
+    <soap:operation soapAction="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php/servico_atualizacao_alteracao" style="document"/>
+    <input><soap:body use="literal" namespace=""/></input>
+    <output><soap:body use="literal" namespace=""/></output>
+  </operation>
+</binding>
+<service name="servico">
+  <port name="servicoPort" binding="tns:servicoBinding">
+    <soap:address location="http://www.cnj.jus.br/corregedoria/ws/extraJudicial.php"/>
+  </port>
+</service>
+</definitions>

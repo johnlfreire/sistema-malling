@@ -1,0 +1,61 @@
+#background {
+    -fx-background-color: #ffffff;
+
+}
+#top-color{
+    -fx-background-color: #97ce68;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 6, 0.0 , 0 , 0 );
+}
+#content{
+    -fx-background-color: #6bcbca;
+}
+
+#paneTop{
+    -fx-border-radius: 4 4 0 0;
+    -fx-background-radius: 4 4 0 0;
+    -fx-background-color: #35a9db;
+}
+#htmlEditor{
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 6, 0.0 , 0 , 0 );
+}
+#paneLeft{
+    -fx-background-color:#00aff0;
+}
+#pane{
+    -fx-background-color: #edede4;  
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 6, 0.0 , 0 , 0 );
+}
+#btnSend{
+
+    -fx-graphic:url('../resource/email-1.png');
+    -fx-background-color:transparent;
+
+}
+#btnSend:hover{
+
+    -fx-graphic:url('../resource/email-send.png');
+}
+#icon{
+    -fx-graphic:url('../resource/email-2.png');
+    -fx-background-color:transparent;
+}
+#tabPane{
+    -fx-background-color:  #3468af;
+
+}
+#tabPane:hover{
+    -fx-background-color: #3598db;
+}
+#tabPane:selected{
+    -fx-background-color: #3598db;
+}
+.tab-pane > .tab-header-area > .tab-header-background{
+    -fx-background-color:  #1bbc9b;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab:top {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-fill: #ffffff;
+}
